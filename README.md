@@ -5,12 +5,15 @@ Usage: `grand [-switches] [length]`
 
 Switches:
 ---------
+
+------  --------------------------------
  -a     include alphabetic characters
  -n     include numeric characters
  -s     include symbol characters
  -x     generate hexadecimal characters
  -g     generate a GUID
  -h|-?  print this help
+------  --------------------------------
 
 If no arguments are specified, '-an 8' is assumed, which will generate a
 random 8-character alphanumeric string.
