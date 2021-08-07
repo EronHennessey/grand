@@ -20,8 +20,7 @@
 #define SYMBOL_CHARS "~`!@#$%^&*()-_+=[]{}|\\:;\"\'<>,.?/"
 
 /* The usage */
-void show_help()
-{
+void show_help() {
    printf("\n"
       "grand - generate random characters\n"
       "==================================\n"
@@ -53,23 +52,17 @@ void show_help()
 }
 
 /* The program */
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
    int length = 8; /* default to 8 characters */
    unsigned int switches = 0;
    srand(time(0));
 
-   if(argc > 1)
-   {
+   if(argc > 1) {
       /* skip the first argument */
-      for(int i = 1; i < argc; i++)
-      {
-         if(argv[i][0] == '-')
-         {
-            for(int j = 0; j < strlen(argv[i]); j++)
-            {
-               switch(argv[i][j])
-               {
+      for(int i = 1; i < argc; i++) {
+         if(argv[i][0] == '-') {
+            for(int j = 0; j < strlen(argv[i]); j++) {
+               switch(argv[i][j]) {
                case 'g': /* make a guid */
                   switches |= GUID;
                   switches |= HEX;
@@ -107,13 +100,11 @@ int main(int argc, char **argv)
    char* chars = 0;
 
    /* if hex is switched on, ignore other character types */
-   if(switches & HEX)
-   {
+   if(switches & HEX) {
       chars = malloc(sizeof(char) * (strlen(HEX_CHARS) + 1));
       strcpy(chars, HEX_CHARS);
    }
-   else
-   {
+   else {
       chars = malloc(sizeof(char) * (
          ((switches & ALPHA) ? strlen(ALPHA_CHARS) : 0) +
          ((switches & NUMERIC) ? strlen(NUM_CHARS) : 0) +

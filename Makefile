@@ -6,3 +6,5 @@ grand: grand.c
 clean:
 	rm -f grand
 
+install:
+	cp grand $(HOME)/bin
